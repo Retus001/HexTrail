@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CellShadedTest
-  m_Shader: {fileID: 4800000, guid: 399fda6c40fc684408068ec306751226, type: 3}
-  m_ShaderKeywords: _LIGHTCOLORFRESNEL_ON
+  m_Name: Conveyor
+  m_Shader: {fileID: 4800000, guid: a2ef04df9bd833f4c9efdfb44cb82c45, type: 3}
+  m_ShaderKeywords: _LIGHTCOLORFRESNEL_ON _PANNU_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 50ad1484657f98647acd294f73fd747b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5a00c5e495b7d1043980ced7bd7e7d36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -64,6 +64,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AnisotropicDirection: 0.45
+    - _AnisotropicIntensity: 1
+    - _AnisotropicPower: 3.5
     - _BumpScale: 1
     - _CellShadingBalance: 0.5
     - _Cutoff: 0.5
@@ -74,33 +77,36 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GlowDirectionPower: 0
-    - _GlowIntensity: 0
+    - _GlowIntensity: 0.56
+    - _HighLights: 0
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPower: 0.756
+    - _NormalPower: 1
     - _OcclusionStrength: 1
     - _OutlineGlow: 0
-    - _OutlinePower: 0.01
-    - _PannU: 0
+    - _OutlinePower: 0.1
+    - _PannSpeed: -0.2
+    - _PannU: 1
     - _PannV: 0
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.4
-    - _SpecularPower: 3.47
+    - _SpecularIntensity: 1.44
+    - _SpecularPower: 2.93
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     - _lightColorFresnel: 0.6078432
-    - _pannSpeed: 0
+    - _pannSpeed: -5
     - _useFresnel: 0
     m_Colors:
+    - _AnisotropicColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 0.6078432, g: 0.9734884, b: 1, a: 1}
-    - _GlowColor: {r: 1, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+    - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadowColor: {r: 0.3424261, g: 0.3530363, b: 0.4245283, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
