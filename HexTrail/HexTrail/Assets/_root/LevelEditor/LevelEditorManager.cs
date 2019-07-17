@@ -117,12 +117,13 @@ public class LevelEditorManager : MonoBehaviour
                             }
                         }
                     }
-                    foreach (Transform child in holdedPiece.transform){
-                        if (child.gameObject.GetComponent<Collider>())
-                            child.gameObject.GetComponent<Collider>().enabled = false;
-                        if (child.gameObject.GetComponent<ParticleSystem>())
-                            child.gameObject.GetComponent<ParticleSystem>().Play();
-                    }
+                    if (holdedPiece)
+                        foreach (Transform child in holdedPiece.transform){
+                            if (child.gameObject.GetComponent<Collider>())
+                                child.gameObject.GetComponent<Collider>().enabled = false;
+                            if (child.gameObject.GetComponent<ParticleSystem>())
+                                child.gameObject.GetComponent<ParticleSystem>().Play();
+                        }
                 }
             }
         }

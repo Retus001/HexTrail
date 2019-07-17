@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8549379915002614761}
   - component: {fileID: 7637159568780880422}
   - component: {fileID: 5453067225502999815}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Downray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4766,7 +4766,7 @@ GameObject:
   - component: {fileID: 974454934173497610}
   m_Layer: 9
   m_Name: HT_CurveA
-  m_TagString: Untagged
+  m_TagString: PieceDynamic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

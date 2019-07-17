@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 202284748166203805}
   - component: {fileID: 609709659381122298}
   - component: {fileID: 1762921808688016249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Downray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4764,7 +4764,7 @@ GameObject:
   - component: {fileID: 101802376878247409}
   - component: {fileID: 5406946770756639632}
   - component: {fileID: 2561474360754790746}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Conveyor_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4810,7 +4810,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 53be57bf7e7f6244cb52b58b5993450b, type: 2}
+  - {fileID: 2100000, guid: 69035d7014517f347ab499f8d48dbf4f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4854,8 +4854,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7419288490184460869}
   m_Layer: 9
-  m_Name: HT_conveyor
-  m_TagString: Untagged
+  m_Name: HT_Conveyor
+  m_TagString: PieceDynamic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4867,7 +4867,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5813516318967609430}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4889,7 +4889,7 @@ GameObject:
   - component: {fileID: 2476415430822890823}
   - component: {fileID: 3562098393914075709}
   - component: {fileID: 2561474360754790747}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Conveyor_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
