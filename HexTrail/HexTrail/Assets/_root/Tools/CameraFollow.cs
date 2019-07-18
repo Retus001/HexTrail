@@ -16,6 +16,12 @@ public class CameraFollow : MonoBehaviour
 
     private Vector3 targetPos;
 
+    public void FollowAll(bool _bool){
+        followX = _bool;
+        followY = _bool;
+        followZ = _bool;
+    }
+
     void Update()
     {
         if (target)

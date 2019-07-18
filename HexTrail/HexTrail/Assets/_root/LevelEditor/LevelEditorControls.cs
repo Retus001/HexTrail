@@ -10,8 +10,11 @@ public class LevelEditorControls : MonoBehaviour
     public Button playBtn;
     public Button stopBtn;
 
-    public SimpleMovement camControls;
-    public CameraFollow camPivot;
+    public GameObject winPanel;
+
+    public GameObject camController;
+    private SimpleMovement camControls;
+    private CameraFollow camControlsFollow;
 
     private Rigidbody ballRig;
     private Vector3 prevVel;
@@ -30,8 +33,7 @@ public class LevelEditorControls : MonoBehaviour
         playBtn.interactable = false;
         stopBtn.interactable = true;
 
-        camPivot.rotateWithTarget = false;
-        camPivot.target = ball;
+        camControlsFollow.FollowAll(true);
         camControls.canMove = false;
     }
 
@@ -43,8 +45,7 @@ public class LevelEditorControls : MonoBehaviour
         playBtn.interactable = true;
         stopBtn.interactable = false;
 
-        camPivot.rotateWithTarget = true;
-        camPivot.target = camControls.gameObject;
+        camControlsFollow.FollowAll(false);
         camControls.canMove = true;
     }
 
@@ -57,9 +58,15 @@ public class LevelEditorControls : MonoBehaviour
         playBtn.interactable = true;
         stopBtn.interactable = false;
 
-        camPivot.rotateWithTarget = true;
-        camPivot.target = camControls.gameObject;
+        camControlsFollow.FollowAll(false);
         camControls.canMove = true;
+
+        winPanel.SetActive(false);
+    }
+
+    public void FinishLevel(){
+        ballRig.constraints = RigidbodyConstraints.FreezeAll;
+        winPanel.SetActive(true);
     }
 
     void Start(){
@@ -70,8 +77,12 @@ public class LevelEditorControls : MonoBehaviour
         playBtn.interactable = true;
         stopBtn.interactable = false;
 
-        camPivot.rotateWithTarget = true;
-        camPivot.target = camControls.gameObject;
+        camControls = camController.GetComponent<SimpleMovement>();
+        camControlsFollow = camController.GetComponent<CameraFollow>();
+
+        camControlsFollow.FollowAll(false);
         camControls.canMove = true;
+
+        winPanel.SetActive(false);
     }
 }
