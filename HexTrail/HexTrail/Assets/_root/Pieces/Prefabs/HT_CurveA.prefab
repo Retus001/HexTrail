@@ -4764,6 +4764,7 @@ GameObject:
   - component: {fileID: 3865293443165172451}
   - component: {fileID: 7392885850436685338}
   - component: {fileID: 974454934173497610}
+  - component: {fileID: -2046419950520378002}
   m_Layer: 9
   m_Name: HT_CurveA
   m_TagString: PieceDynamic
@@ -4845,3 +4846,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -7892244738502490754, guid: 37d572bf75453f54aba08a5fbc770a48, type: 3}
+--- !u!114 &-2046419950520378002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9125445750402611910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed716820780834f48884c0a95b7c18be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  ptr: {fileID: 7637159568780880422}
+  m_dynamic: []
+  m_static: []

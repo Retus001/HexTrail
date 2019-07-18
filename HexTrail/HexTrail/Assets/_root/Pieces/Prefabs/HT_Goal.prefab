@@ -4766,7 +4766,7 @@ GameObject:
   - component: {fileID: 386708299746783701}
   - component: {fileID: 386708299746783702}
   - component: {fileID: 522660582402169640}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HT_Goal
   m_TagString: PieceStatic
   m_Icon: {fileID: 0}

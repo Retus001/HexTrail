@@ -4764,7 +4764,8 @@ GameObject:
   - component: {fileID: 1147343392847335947}
   - component: {fileID: 6688029992443801330}
   - component: {fileID: -5432264860197748655}
-  m_Layer: 9
+  - component: {fileID: -3967259781379142758}
+  m_Layer: 0
   m_Name: HT_Switch
   m_TagString: PieceDynamic
   m_Icon: {fileID: 0}
@@ -4845,3 +4846,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -8007441879807768515, guid: e667f6825a6ec1949a94399c1a6615ac, type: 3}
+--- !u!114 &-3967259781379142758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966469676094151214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed716820780834f48884c0a95b7c18be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  ptr: {fileID: 4021042448652691767}
+  m_dynamic: []
+  m_static: []

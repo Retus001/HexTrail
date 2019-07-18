@@ -15,6 +15,8 @@ public class LevelEditorManager : MonoBehaviour
     public LayerMask draggingLayermask;
     private LevelEditorControls LEControls;
 
+    public bool editorMode = false;
+
     private bool canPlace = true;
 
     public void SpawnPiece(GameObject _pieceSpawner) {
@@ -22,15 +24,9 @@ public class LevelEditorManager : MonoBehaviour
             if (_pieceSpawner.GetComponent<LevelEditorPieceSpawner>().GetAmmount() > 0){
                 GameObject pieceToSpawn = _pieceSpawner.GetComponent<LevelEditorPieceSpawner>().piecePfb;
                 GameObject piece = Instantiate(pieceToSpawn, grid.transform);
-                if (piece.GetComponent<Collider>())
-                    piece.GetComponent<Collider>().enabled = false;
-                foreach (Transform child in piece.transform){
-                    if (child.gameObject.GetComponent<Collider>())
-                        child.gameObject.GetComponent<Collider>().enabled = false;
-                    if (child.gameObject.GetComponent<ParticleSystem>())
-                        child.gameObject.GetComponent<ParticleSystem>().Play();
-                }
                 holdedPiece = piece;
+                holdedPiece.GetComponent<HTP_Main>().ToggleColliders(false);
+                holdedPiece.GetComponent<HTP_Main>().ToggleParticles(true);
                 draggingPiece = true;
                 _pieceSpawner.GetComponent<LevelEditorPieceSpawner>().ReduceAmmount();
             }
@@ -48,15 +44,10 @@ public class LevelEditorManager : MonoBehaviour
             if (draggingPiece){
                 if (Input.GetMouseButtonDown(0) && !LEControls.IsRunning()){
                     if (canPlace){
+                        Debug.Log("Place!");
                         draggingPiece = false;
-                        if (holdedPiece.GetComponent<Collider>()){
-                            holdedPiece.GetComponent<Collider>().enabled = true;}
-                        foreach(Transform child in holdedPiece.transform) {
-                            if (child.gameObject.GetComponent<Collider>()){
-                                child.gameObject.GetComponent<Collider>().enabled = true;}
-                            if (child.gameObject.GetComponent<ParticleSystem>()){
-                                child.gameObject.GetComponent<ParticleSystem>().Stop();}
-                        }
+                        holdedPiece.GetComponent<HTP_Main>().ToggleColliders(true);
+                        holdedPiece.GetComponent<HTP_Main>().ToggleParticles(false);
                         holdedPiece = null;
                     }
                 } else {
@@ -64,6 +55,8 @@ public class LevelEditorManager : MonoBehaviour
                     Ray ray = cam.ScreenPointToRay(Input.mousePosition);
     
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, draggingLayermask)) {
+                        Debug.Log("hit: " + hit.collider.gameObject.name);
+                        
                         holdedPiece.transform.position = hit.point;
                         holdedPiece.transform.position = grid.GetComponent<Grid>().GetCellCenterWorld(grid.GetComponent<Grid>().WorldToCell(holdedPiece.transform.position));
                         
@@ -83,6 +76,9 @@ public class LevelEditorManager : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Q)){
                             holdedPiece.transform.Rotate(Vector3.down * 60, Space.World);
                         }
+                        if (Input.GetKeyDown(KeyCode.F)){
+                            holdedPiece.GetComponent<HTP_Main>().ToggleState();
+                        }
                     }
                 }
             } else {
@@ -91,28 +87,26 @@ public class LevelEditorManager : MonoBehaviour
                     Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, pickablesLayermask)) {
-                        Debug.Log("Hit: " + hit.collider.gameObject.name);
-                        if (hit.collider.gameObject.CompareTag("PieceDynamic")) {
+                        if (hit.collider.gameObject.CompareTag("PieceDynamic") || editorMode) {
                             holdedPiece = hit.collider.gameObject;
-                            holdedPiece.GetComponent<Collider>().enabled = false;
                             draggingPiece = true;
+                            if (hit.collider.gameObject.transform.parent != null) {
+                                if (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceDynamic") || editorMode) {
+                                    Debug.Log("parent found:");
+                                    holdedPiece = hit.collider.gameObject.transform.parent.gameObject;
+                                }
+                            }
                         } else {
                             if (hit.collider.gameObject.transform.parent) {
-                                if (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceDynamic")) {
+                                if (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceDynamic") || editorMode) {
                                     holdedPiece = hit.collider.gameObject.transform.parent.gameObject;
-                                    if (holdedPiece.GetComponent<Collider>()){
-                                        holdedPiece.GetComponent<Collider>().enabled = false;}
                                     draggingPiece = true;
                                 }
                             }
                         }
                         if (holdedPiece){
-                            foreach (Transform child in holdedPiece.transform){
-                                if (child.gameObject.GetComponent<Collider>()){
-                                    child.gameObject.GetComponent<Collider>().enabled = false;}
-                                if (child.gameObject.GetComponent<ParticleSystem>()){
-                                    child.gameObject.GetComponent<ParticleSystem>().Play();}
-                            }
+                            holdedPiece.GetComponent<HTP_Main>().ToggleColliders(false);
+                            holdedPiece.GetComponent<HTP_Main>().ToggleParticles(true);
                         } 
                     }
                 }

@@ -4764,6 +4764,7 @@ GameObject:
   - component: {fileID: 4448367854354965242}
   - component: {fileID: 7964421971453926915}
   - component: {fileID: 2304917268998449478}
+  - component: {fileID: -2322166773229626560}
   m_Layer: 9
   m_Name: HT_Ramp
   m_TagString: PieceDynamic
@@ -4845,3 +4846,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -478882678752539408, guid: ddd6121b89e7f9b469985e92c319370e, type: 3}
+--- !u!114 &-2322166773229626560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555600800674605791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed716820780834f48884c0a95b7c18be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models:
+  - {fileID: 8555600800674605791}
+  ptr: {fileID: 403763275536331572}
+  m_dynamic:
+  - {fileID: 2100000, guid: a8ba12c44415dc642940db4a8a3cbc91, type: 2}
+  m_static:
+  - {fileID: 2100000, guid: 09b449eb1e68dd34db74224ce551e44f, type: 2}

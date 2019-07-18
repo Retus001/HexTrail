@@ -4764,6 +4764,7 @@ GameObject:
   - component: {fileID: 4299006748420589475}
   - component: {fileID: 7536117254469335898}
   - component: {fileID: 254613554259590765}
+  - component: {fileID: 2663478405583356534}
   m_Layer: 9
   m_Name: HT_Cross
   m_TagString: PieceDynamic
@@ -4845,3 +4846,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 2061150301263699924, guid: 8f1a62ccc2fbc2e4faf72a125b42beed, type: 3}
+--- !u!114 &2663478405583356534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118156948995837830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed716820780834f48884c0a95b7c18be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models:
+  - {fileID: 8118156948995837830}
+  ptr: {fileID: 2619248149479409735}
+  m_dynamic:
+  - {fileID: 2100000, guid: 1c13590bfcae4594983f42329c5ab153, type: 2}
+  m_static:
+  - {fileID: 2100000, guid: 62619fa10e90a4c48ab8875c268bb733, type: 2}

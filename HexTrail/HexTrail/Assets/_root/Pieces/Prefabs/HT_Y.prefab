@@ -4854,6 +4854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7836129702089267392}
   - component: {fileID: 2561064233020645474}
+  - component: {fileID: 8049666700363220500}
   m_Layer: 9
   m_Name: HT_Y
   m_TagString: PieceDynamic
@@ -4892,6 +4893,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!114 &8049666700363220500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6549605682117470931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed716820780834f48884c0a95b7c18be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  ptr: {fileID: 3009867712166280543}
+  m_dynamic: []
+  m_static: []
 --- !u!1 &7018220046010178216
 GameObject:
   m_ObjectHideFlags: 0
