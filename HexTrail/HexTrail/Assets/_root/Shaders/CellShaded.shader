@@ -26,8 +26,8 @@ Shader "Retus001/CellShaded" {
         _GlowDirectionPower ("GlowDirectionPower", Range(0, 10)) = 0
         _OutlineColor ("OutlineColor", Color) = (0,0,0,1)
         _OutlineGlow ("OutlineGlow", Range(0, 10)) = 0
-        _PannSpeedX ("PannSpeedX", Range(-5, 5)) = -1
-        _PannSpeedY ("PannSpeedY", Range(-5, 5)) = 0
+        _PannSpeedX ("PannSpeedX", Range(-20, 20)) = -1
+        _PannSpeedY ("PannSpeedY", Range(-20, 20)) = 0
         _EmissionPannSpeedX ("EmissionPannSpeedX", Range(-5, 5)) = 0
         _EmissionPannSpeedY ("EmissionPannSpeedY", Range(-5, 5)) = 0
     }
