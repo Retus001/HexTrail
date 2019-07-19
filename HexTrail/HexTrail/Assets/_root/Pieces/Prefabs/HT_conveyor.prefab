@@ -4766,7 +4766,7 @@ GameObject:
   - component: {fileID: 2561474360754790746}
   m_Layer: 9
   m_Name: Conveyor_Base
-  m_TagString: PieceDynamic
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4857,7 +4857,7 @@ GameObject:
   - component: {fileID: 2561474361661203456}
   - component: {fileID: -3126588679138488087}
   m_Layer: 0
-  m_Name: HT_Conveyor
+  m_Name: HT_conveyor
   m_TagString: PieceDynamic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4942,7 +4942,7 @@ GameObject:
   - component: {fileID: 2561474360754790747}
   m_Layer: 9
   m_Name: Conveyor_Top
-  m_TagString: PieceDynamic
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

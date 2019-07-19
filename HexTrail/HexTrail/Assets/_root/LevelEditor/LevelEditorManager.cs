@@ -8,27 +8,29 @@ public class LevelEditorManager : MonoBehaviour
     public GameObject piecesHolder;
     public List<GameObject> pieceList = new List<GameObject>();
     public GameObject grid;
-    private GameObject holdedPiece;
+    public GameObject holdedPiece;
     private bool draggingPiece = false;
     public Camera cam;
     public LayerMask pickablesLayermask;
     public LayerMask draggingLayermask;
     private LevelEditorControls LEControls;
 
+    public GameObject editorModePanel;
     public bool editorMode = false;
 
     private bool canPlace = true;
 
     public void SpawnPiece(GameObject _pieceSpawner) {
         if (!LEControls.IsRunning()){
-            if (_pieceSpawner.GetComponent<LevelEditorPieceSpawner>().GetAmmount() > 0){
+            if (_pieceSpawner.GetComponent<LevelEditorPieceSpawner>().GetAmmount() > 0 || editorMode){
                 GameObject pieceToSpawn = _pieceSpawner.GetComponent<LevelEditorPieceSpawner>().piecePfb;
                 GameObject piece = Instantiate(pieceToSpawn, grid.transform);
                 holdedPiece = piece;
                 holdedPiece.GetComponent<HTP_Main>().ToggleColliders(false);
                 holdedPiece.GetComponent<HTP_Main>().ToggleParticles(true);
                 draggingPiece = true;
-                _pieceSpawner.GetComponent<LevelEditorPieceSpawner>().ReduceAmmount();
+                if (!editorMode){
+                    _pieceSpawner.GetComponent<LevelEditorPieceSpawner>().ReduceAmmount(); }
             }
         }
     }
@@ -76,7 +78,7 @@ public class LevelEditorManager : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Q)){
                             holdedPiece.transform.Rotate(Vector3.down * 60, Space.World);
                         }
-                        if (Input.GetKeyDown(KeyCode.F)){
+                        if (Input.GetKeyDown(KeyCode.F) && editorMode){
                             holdedPiece.GetComponent<HTP_Main>().ToggleState();
                         }
                     }
@@ -87,18 +89,13 @@ public class LevelEditorManager : MonoBehaviour
                     Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, pickablesLayermask)) {
-                        if (hit.collider.gameObject.CompareTag("PieceDynamic") || editorMode) {
+                        Debug.Log("hit: " + hit.collider.gameObject.name);
+                        if (hit.collider.gameObject.CompareTag("PieceDynamic") || (hit.collider.gameObject.CompareTag("PieceStatic") && editorMode)) {
                             holdedPiece = hit.collider.gameObject;
                             draggingPiece = true;
-                            if (hit.collider.gameObject.transform.parent != null) {
-                                if (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceDynamic") || editorMode) {
-                                    Debug.Log("parent found:");
-                                    holdedPiece = hit.collider.gameObject.transform.parent.gameObject;
-                                }
-                            }
                         } else {
                             if (hit.collider.gameObject.transform.parent) {
-                                if (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceDynamic") || editorMode) {
+                                if (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceDynamic") || (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceStatic") && editorMode)) {
                                     holdedPiece = hit.collider.gameObject.transform.parent.gameObject;
                                     draggingPiece = true;
                                 }
@@ -111,11 +108,17 @@ public class LevelEditorManager : MonoBehaviour
                     }
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.M)){
+                editorMode = !editorMode;
+                editorModePanel.GetComponent<Animator>().SetBool("EditorModeOn", editorMode);
+            }
         }
     }
 
     private void Awake() {
         LEControls = GetComponent<LevelEditorControls>();
+        editorModePanel.GetComponent<Animator>().SetBool("EditorModeOn", editorMode);
     }
 
     private void Start(){
