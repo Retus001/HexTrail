@@ -9,7 +9,7 @@ public class HTP_Main : MonoBehaviour
         STATIC = 1
     };
 
-    STATE currentState = STATE.DYNAMIC;
+    STATE currentState;
 
     public GameObject[] models;
     public ParticleSystem ptr;
@@ -53,5 +53,9 @@ public class HTP_Main : MonoBehaviour
         } else {
             ptr.Stop();
         }
+    }
+
+    private void Awake(){
+        
     }
 }

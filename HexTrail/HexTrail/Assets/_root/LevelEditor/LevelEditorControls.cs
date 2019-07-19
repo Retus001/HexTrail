@@ -54,6 +54,7 @@ public class LevelEditorControls : MonoBehaviour
         ball.transform.position = initialBallPosition;
         ball.transform.rotation = Quaternion.identity;
         ballRig.constraints = RigidbodyConstraints.FreezeAll;
+        ballRig.velocity = Vector3.zero;
 
         playBtn.interactable = true;
         stopBtn.interactable = false;
