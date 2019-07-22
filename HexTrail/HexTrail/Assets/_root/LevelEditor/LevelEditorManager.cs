@@ -92,6 +92,12 @@ public class LevelEditorManager : MonoBehaviour
                         Debug.Log("hit: " + hit.collider.gameObject.name);
                         if (hit.collider.gameObject.CompareTag("PieceDynamic") || (hit.collider.gameObject.CompareTag("PieceStatic") && editorMode)) {
                             holdedPiece = hit.collider.gameObject;
+                            if (hit.collider.gameObject.transform.parent) {
+                                if (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceDynamic") || (hit.collider.gameObject.transform.parent.gameObject.CompareTag("PieceStatic") && editorMode)) {
+                                    holdedPiece = hit.collider.gameObject.transform.parent.gameObject;
+                                    draggingPiece = true;
+                                }
+                            }
                             draggingPiece = true;
                         } else {
                             if (hit.collider.gameObject.transform.parent) {

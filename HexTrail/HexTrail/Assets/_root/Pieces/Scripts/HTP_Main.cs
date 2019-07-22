@@ -24,6 +24,7 @@ public class HTP_Main : MonoBehaviour
                     models[i].GetComponent<MeshRenderer>().material = m_static[i];
                     models[i].tag = "PieceStatic";
                 }
+                gameObject.tag = "PieceStatic";
                 currentState = STATE.STATIC;
             break;
 
@@ -32,6 +33,7 @@ public class HTP_Main : MonoBehaviour
                     models[i].GetComponent<MeshRenderer>().material = m_dynamic[i];
                     models[i].tag = "PieceDynamic";
                 }
+                gameObject.tag = "PieceDynamic";
                 currentState = STATE.DYNAMIC;
             break;
 
@@ -56,6 +58,10 @@ public class HTP_Main : MonoBehaviour
     }
 
     private void Awake(){
-        
+        if (gameObject.CompareTag("PieceStatic")) {
+            currentState = STATE.STATIC;
+        } else {
+            currentState = STATE.DYNAMIC;
+        }
     }
 }

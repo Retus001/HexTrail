@@ -9868,7 +9868,7 @@ PrefabInstance:
     - target: {fileID: 6150091989655325149, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
       propertyPath: maxAmmount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8952627996915473129, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
@@ -12437,7 +12437,7 @@ PrefabInstance:
     - target: {fileID: 6150091989655325149, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
       propertyPath: maxAmmount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8952627996915473129, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
@@ -13776,7 +13776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &851279099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14678,7 +14678,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 838347096}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.47105384
+  m_Size: 0.47141072
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20761,6 +20761,7 @@ MonoBehaviour:
   piecesHolder: {fileID: 1163903048}
   pieceList: []
   grid: {fileID: 1659003916}
+  holdedPiece: {fileID: 0}
   cam: {fileID: 0}
   pickablesLayermask:
     serializedVersion: 2
@@ -23476,7 +23477,7 @@ PrefabInstance:
     - target: {fileID: 6150091989655325149, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
       propertyPath: maxAmmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8952627996915473129, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
@@ -26895,7 +26896,7 @@ PrefabInstance:
     - target: {fileID: 6150091989655325149, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
       propertyPath: maxAmmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8952627996915473129, guid: 2d4caeac09c5c714482eeed98331949a,
         type: 3}
